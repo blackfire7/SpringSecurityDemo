@@ -10,7 +10,11 @@ public class TemplateController {
 
     @GetMapping("login")
     public String getLogin() {
+<<<<<<< HEAD
         return "Login";
+=======
+        return "login";
+>>>>>>> Form-Based-Authentication
     }
 
     @GetMapping("courses")

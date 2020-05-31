@@ -46,23 +46,38 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
+<<<<<<< HEAD
 //                .httpBasic();
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
                     .defaultSuccessUrl("/courses", true)
+=======
+                .formLogin()
+                    .loginPage("/login")
+                    .permitAll()
+                    .defaultSuccessUrl("/courses")
+>>>>>>> Form-Based-Authentication
                     .passwordParameter("password")
                     .usernameParameter("username")
                 .and()
                 .rememberMe()
                     .tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21))
+<<<<<<< HEAD
                     .key("dsdsdsdsdsdsdsdsdsdsfsfsf")
+=======
+                    .key("dsfsfsfsfsdfsfaf4efsfs23")
+>>>>>>> Form-Based-Authentication
                     .rememberMeParameter("remember-me")
                 .and()
                 .logout()
                     .logoutUrl("/logout")
+<<<<<<< HEAD
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET")) //If csrf is enabled then we
                 // should use POST request
+=======
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+>>>>>>> Form-Based-Authentication
                     .clearAuthentication(true)
                     .invalidateHttpSession(true)
                     .deleteCookies("JSESSIONID", "remember-me")
